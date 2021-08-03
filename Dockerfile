@@ -3,12 +3,13 @@ LABEL maintainer="Fury Team"
 
 ADD environment.yml /tmp/environment.yml
 # RUN conda env create -f /tmp/environment.yml
-RUN apt-get -qq update && apt-get -qq -y install curl bzip2 gcc g++ \
+RUN apt-get -qq update && apt-get -qq -y install curl bzip2 gcc g++ git \
     && curl -sSL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -o /tmp/miniconda.sh \
     && bash /tmp/miniconda.sh -bfp /usr/local \
     && rm -rf /tmp/miniconda.sh \
     && conda env update --file /tmp/environment.yml \
     && conda install -y -c conda-forge igraph \
+    && conda update conda \
     && conda update conda \
     && apt-get install  -yq --no-install-recommends \
     libgl1-mesa-glx \
