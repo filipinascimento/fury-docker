@@ -9,4 +9,4 @@ dependencies:
   - pip
   - pip:
     - aiohttp
-    - git+https://github.com/devmessias/fury.git@feature_fury_stream_client
+    - git+https://github.com/filipinascimento/fury.git@feature_fury_stream_client
