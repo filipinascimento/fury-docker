@@ -1,0 +1,11 @@
+name: base
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - python=3.8
+  - ipython
+  - pip
+  - pip:
+    - git+git@github.com:devmessias/fury.git@feature_fury_stream_client
